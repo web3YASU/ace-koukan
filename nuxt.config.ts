@@ -1,10 +1,9 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+
 export default defineNuxtConfig({
-  //...
   build: {
     transpile: ['vuetify'],
   },
-
   modules: [
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
@@ -12,9 +11,7 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
-    //...
   ],
-
   vite: {
     vue: {
       template: {
@@ -22,10 +19,9 @@ export default defineNuxtConfig({
       },
     },
   },
-
+  css: ['@mdi/font/css/materialdesignicons.css'], // ← これを統合！
+  app: {
+    baseURL: '/ace-koukan/',
+  },
   compatibilityDate: '2025-03-16',
-// ↓↓↓ ここから追記 ↓↓↓
-app: {
-  baseURL: '/ace-koukan/',
-}
 })
