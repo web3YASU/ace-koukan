@@ -19,9 +19,16 @@ export default defineNuxtConfig({
       },
     },
   },
-  css: ['@mdi/font/css/materialdesignicons.css'], // ← これを統合！
   app: {
     baseURL: '/ace-koukan/',
+    head: {
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css',
+        },
+      ],
+    },
   },
-  compatibilityDate: '2025-03-16',
+    compatibilityDate: '2025-03-16',
 })
