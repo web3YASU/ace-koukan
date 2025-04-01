@@ -3,22 +3,19 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 export default defineNuxtConfig({
   ssr: true,
   nitro: {
-    preset: 'static'  // ← GitHub Pages 用に追加！
+    preset: 'static',
   },
   app: {
-    baseURL: '/ace-koukan/', // ← GitHub Pagesのサブパスに合わせる！
+    baseURL: '/ace-koukan/',
     head: {
       link: [
         {
           rel: 'stylesheet',
           href: 'https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css',
-        }
-      ]
-    }
+        },
+      ],
+    },
   },
-  css: [
-    // Vuetify用のCSSがあればここに追加
-  ],
   build: {
     transpile: ['vuetify'],
   },
@@ -37,5 +34,4 @@ export default defineNuxtConfig({
       },
     },
   },
-  compatibilityDate: '2025-03-16',
 })

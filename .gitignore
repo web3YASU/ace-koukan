@@ -21,4 +21,12 @@ logs
 .env
 .env.*
 !.env.example
+
+# GitHub Pages用にdocsだけは除外しない
+!docs/
 !docs/**
+
+# でも出力ファイルだけに限定するならこっちでもOK
+# !docs/_nuxt/**
+# !docs/*.html
+# !docs/*.json
